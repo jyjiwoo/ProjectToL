@@ -15,8 +15,12 @@ public class TileSpawner : MonoBehaviour
     [SerializeField]
     private Transform parentTransform;
 
-    private int balanceSize = 5;
-    private float spacing = 0.1f;
+    private int balanceSize = 1;
+    private float spacing = 0;
+
+    // temp
+    [SerializeField]
+    private GameObject characterPrefab;
 
 
 
@@ -27,6 +31,11 @@ public class TileSpawner : MonoBehaviour
             for (int x = 0; x < boardWidth; x++)
             {
                 GameObject clone = Instantiate(tilePrefab, new Vector3((x + spacing * x) * balanceSize, 0, (y + spacing * y) * balanceSize), Quaternion.identity, parentTransform);
+                
+                if (x == 0)
+                {
+                    GameObject TempCharacter = Instantiate(characterPrefab, new Vector3((x + spacing * x) * balanceSize, 0, (y + spacing * y) * balanceSize), Quaternion.identity);
+                }
             }
         }
     }
