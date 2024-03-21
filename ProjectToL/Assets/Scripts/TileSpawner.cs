@@ -16,7 +16,7 @@ public class TileSpawner : MonoBehaviour
     private Transform parentTransform;
 
     private int balanceSize = 1;
-    private float spacing = 0;
+    private float spacing = 0.1f;
 
     // temp
     [SerializeField]
